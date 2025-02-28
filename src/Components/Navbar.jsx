@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LuSun } from "react-icons/lu";
 import { FaMoon } from "react-icons/fa";
@@ -15,8 +15,22 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
 
+
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = "hidden";  // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto";   // Enable scrolling
+    }
+
+    // Cleanup when component unmounts or menu is toggled off
+    return () => {
+      document.body.style.overflow = "auto";   // Ensure scrolling is enabled when Navbar is unmounted
+    };
+  }, [showMenu]);
+
   return (
-    <nav className="navbar flex justify-between items-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-600 h-16 px-2">
+    <nav className="navbar flex justify-between items-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-600 h-16 px-2 relative">
       <div className="logo text-2xl font-semibold text-black dark:text-gray-200">
         FoodFiesta
       </div>
@@ -24,8 +38,9 @@ const Navbar = () => {
         className={`nav-links bg-white dark:bg-gray-800 shadow-lg 
     absolute right-0 top-16 w-[50%] 
     ${showMenu ? "translate-x-[0%]" : "translate-x-[100%]"} 
-    duration-300 ease-in-out h-full py-4 gap-10 flex flex-col items-center 
-    lg:static lg:flex-row lg:w-auto lg:h-auto lg:shadow-none lg:translate-x-0 lg:transition-none`}
+    duration-300 ease-in-out h-[100vh] z-50 py-4 gap-10 flex flex-col items-center 
+    lg:static lg:flex-row lg:w-auto lg:h-auto lg:shadow-none lg:translate-x-0 lg:transition-none overflow-hidden`}
+    style={{overflow: 'hidden'}}
       >
         <li>
           <Link className="text-black dark:text-gray-300">Home</Link>

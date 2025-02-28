@@ -6,6 +6,7 @@ import burger from '../asset/1.svg'
 import pi from '../asset/2.svg'
 import pizza from '../asset/3.svg'
 import Description from '../Components/Description';
+import interior from '../asset/interior.jpg'
 
 
 const HomePage = () => {
@@ -29,7 +30,7 @@ const HomePage = () => {
   return (
 
     <>
-    <section className='bg-white dark:bg-gray-900 lg:px-56'>
+    <section className='bg-white dark:bg-gray-900 px-5 lg:px-56'>
     <div className=' pt-10 flex flex-col items-center gap-14 lg:flex-row'>
 
 
@@ -61,7 +62,21 @@ const HomePage = () => {
       <h1 className='text-4xl font-bold'>We are doing more than
       you expect</h1>
 
-      <Description />
+      <div className='felx flex-col space-y-20'>
+      <div className='mt-10 flex flex-col gap-10 '>
+        {strategies.map((strategy) => (
+          <Description sno={strategy.sno} heading={strategy.heading} description={strategy.description} />
+        ))}
+      </div>
+
+      <div className=''>
+        <div>
+          <img src={interior} alt="" />
+        </div>
+      </div>
+      </div>
+
+      
     </div>
 
     </section>
