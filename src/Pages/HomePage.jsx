@@ -8,6 +8,7 @@ import pizza from '../asset/3.svg'
 import Description from '../Components/Description';
 import interior from '../asset/interior.jpg'
 import { BsArrowUpRightCircle } from "react-icons/bs";
+import Starter from '../Components/Starter';
 
 
 
@@ -101,15 +102,8 @@ const HomePage = () => {
 
         </div>
 
-        <div className='menu-section'>
-          <div>
-            <div className='icon'></div>
-            <div>
-              <h2>Starters</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, reprehenderit.</p>
-            </div>
-          </div>
-          <div></div>
+        <div className='menu-section mt-20'>
+              <Starter />
         </div>
 
       </section>
