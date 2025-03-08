@@ -9,6 +9,14 @@ import Description from '../Components/Description';
 import interior from '../asset/interior.jpg'
 import { BsArrowUpRightCircle } from "react-icons/bs";
 import Starter from '../Components/Starter';
+import salad from '../asset/1.png'
+import mainDish from '../asset/2.png'
+import drinks from '../asset/3.png'
+import dessert from '../asset/4.png'
+
+
+
+
 
 
 
@@ -30,10 +38,38 @@ const HomePage = () => {
       description: "Necessitatibus praesentium eligendi rem temporibus adipisci quo modi. Lorem ipsum dolor sit."
     },
   ]
+
+
+  const starters = [
+    {
+      images:salad,
+      foodName:"Starters",
+      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+
+    {
+      images:mainDish,
+      foodName:"Main dishes",
+      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+
+    {
+      images:drinks,
+      foodName:"Drinks",
+      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+
+
+    {
+      images:dessert,
+      foodName:"Desserts",
+      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+  ]
   return (
 
     <>
-      <section className='bg-white dark:bg-gray-900 px-5 lg:px-20 xl:px-48'>
+      <section className='bg-white dark:bg-gray-900 px-5 lg:px-20 xl:px-40'>
         <div className=' pt-10 flex flex-col items-center gap-14 lg:flex-row'>
 
 
@@ -102,9 +138,23 @@ const HomePage = () => {
 
         </div>
 
-        <div className='menu-section mt-20'>
-              <Starter />
+              <section className='py-20 space-y-7'>
+              <div className='menu-section-1 flex flex-col gap-5 justify-center items-center lg:flex-row lg:justify-between'>
+              {
+                starters.slice(0,2).map((starter) => (
+                  <Starter images={starter.images} foodName={starter.foodName} content={starter.content} />
+                ))
+              }
         </div>
+
+        <div className='menu-section-2 flex gap-5 flex-col justify-center items-center lg:flex-row lg:justify-between'>
+              {
+                starters.slice(2).map((starter) => (
+                  <Starter images={starter.images} foodName={starter.foodName} content={starter.content} />
+                ))
+              }
+        </div>
+              </section>
 
       </section>
 
