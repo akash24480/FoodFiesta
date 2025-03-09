@@ -13,6 +13,7 @@ import salad from '../asset/1.png'
 import mainDish from '../asset/2.png'
 import drinks from '../asset/3.png'
 import dessert from '../asset/4.png'
+import Dishes from '../Components/Dishes';
 
 
 
@@ -42,28 +43,28 @@ const HomePage = () => {
 
   const starters = [
     {
-      images:salad,
-      foodName:"Starters",
-      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      images: salad,
+      foodName: "Starters",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
 
     {
-      images:mainDish,
-      foodName:"Main dishes",
-      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      images: mainDish,
+      foodName: "Main dishes",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
 
     {
-      images:drinks,
-      foodName:"Drinks",
-      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      images: drinks,
+      foodName: "Drinks",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
 
 
     {
-      images:dessert,
-      foodName:"Desserts",
-      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      images: dessert,
+      foodName: "Desserts",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
   ]
   return (
@@ -126,35 +127,40 @@ const HomePage = () => {
           <div>
             <h1 className='text-3xl font-bold dark:text-gray-200'>What do you like today?</h1>
             <div className='flex flex-col gap-5 mt-3 lg:flex-row lg:items-center lg:justify-between'>
-            <p className='text-gray-500 w-80'>Consectetur numquam poro nemo veniam
-            eligendi rem adipisci quo modi. </p>
-            <div>
-              <button className='px-8 py-4 bg-customYellow text-black font-semibold flex items-center gap-3'><BsArrowUpRightCircle className='text-2xl' />Go shopping now</button>
+              <p className='text-gray-500 w-80'>Consectetur numquam poro nemo veniam
+                eligendi rem adipisci quo modi. </p>
+              <div>
+                <button className='px-8 py-4 bg-customYellow text-black font-semibold flex items-center gap-3'><BsArrowUpRightCircle className='text-2xl' />Go shopping now</button>
+              </div>
             </div>
-            </div>
-            
+
           </div>
 
 
         </div>
 
-              <section className='py-20 space-y-7'>
-              <div className='menu-section-1 flex flex-col gap-5 justify-center items-center lg:flex-row lg:justify-between'>
-              {
-                starters.slice(0,2).map((starter) => (
-                  <Starter images={starter.images} foodName={starter.foodName} content={starter.content} />
-                ))
-              }
-        </div>
+        <section className='py-20 space-y-7'>
+          <div className='menu-section-1 flex flex-col gap-5 justify-center items-center lg:flex-row lg:justify-between'>
+            {
+              starters.slice(0, 2).map((starter) => (
+                <Starter images={starter.images} foodName={starter.foodName} content={starter.content} />
+              ))
+            }
+          </div>
 
-        <div className='menu-section-2 flex gap-5 flex-col justify-center items-center lg:flex-row lg:justify-between'>
-              {
-                starters.slice(2).map((starter) => (
-                  <Starter images={starter.images} foodName={starter.foodName} content={starter.content} />
-                ))
-              }
-        </div>
-              </section>
+          <div className='menu-section-2 flex gap-5 flex-col justify-center items-center lg:flex-row lg:justify-between'>
+            {
+              starters.slice(2).map((starter) => (
+                <Starter images={starter.images} foodName={starter.foodName} content={starter.content} />
+              ))
+            }
+          </div>
+        </section>
+
+
+        <section className='py-14'>
+          <Dishes />
+        </section>
 
       </section>
 
