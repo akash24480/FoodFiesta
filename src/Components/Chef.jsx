@@ -56,6 +56,9 @@ const Chef = () => {
         className="mySwiper"
         breakpoints={{
             375: {  
+                slidesPerView: 1,
+            },
+            575: {  
                 slidesPerView: 2,
             },
             768:{

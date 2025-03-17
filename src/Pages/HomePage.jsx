@@ -15,6 +15,7 @@ import drinks from '../asset/3.png'
 import dessert from '../asset/4.png'
 import Dishes from '../Components/Dishes';
 import Chef from '../Components/Chef';
+import Advertise from '../Components/Advertise';
 
 
 
@@ -166,6 +167,10 @@ const HomePage = () => {
 
         <section className='py-14'>
           <Chef />
+        </section>
+
+        <section className='py-24'>
+          <Advertise />
         </section>
 
       </section>
